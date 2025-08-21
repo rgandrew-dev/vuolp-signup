@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vuolp Newsletter Signup</title>
 
-  <!-- Load DM Sans -->
+  <!-- DM Sans -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -14,10 +14,12 @@
       --text: #111;
       --card: transparent;
       --maxw: 720px;
+      --border: #d2d2d2;
+      --border-focus: #111;
+      --placeholder: #8a8a8a;
     }
-    html, body {
-      height: 100%;
-    }
+
+    html, body { height: 100%; }
     body {
       margin: 0;
       background: var(--bg);
@@ -25,6 +27,7 @@
       font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
       line-height: 1.45;
     }
+
     .wrap {
       min-height: 100%;
       display: grid;
@@ -34,7 +37,7 @@
     .card {
       width: 100%;
       max-width: var(--maxw);
-      background: var(--card) !important; /* keep transparent */
+      background: var(--card) !important;
       box-shadow: none !important;
     }
 
@@ -48,14 +51,69 @@
       box-shadow: none !important;
       border: 0 !important;
     }
-    /* Inputs and buttons */
+
+    /* Inputs */
     .klaviyo-form input,
-    .klaviyo-form button,
     .klaviyo-form select,
     .klaviyo-form textarea {
-      font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 12px 14px !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 8px !important;
+      background: #fff !important;
+      color: var(--text) !important;
+      outline: none !important;
+      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+      font-size: 16px !important;
     }
-    /* Remove any default gray wrapper some themes inject */
+    .klaviyo-form input::placeholder,
+    .klaviyo-form textarea::placeholder {
+      color: var(--placeholder) !important;
+      opacity: 1 !important;
+    }
+    .klaviyo-form input:focus,
+    .klaviyo-form select:focus,
+    .klaviyo-form textarea:focus {
+      border-color: var(--border-focus) !important;
+      box-shadow: 0 0 0 2px rgba(0,0,0,.08) !important;
+      background: #fff !important;
+    }
+
+    /* Field spacing */
+    .klaviyo-form .needsclick:not(.kl-private-reset-css-Xuajs1) + .needsclick,
+    .klaviyo-form .kl-private-reset-css-Xuajs1 + .kl-private-reset-css-Xuajs1 {
+      margin-top: 14px !important;
+    }
+
+    /* Labels */
+    .klaviyo-form label {
+      display: block !important;
+      margin: 0 0 6px 2px !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      color: var(--text) !important;
+    }
+
+    /* Button */
+    .klaviyo-form button,
+    .klaviyo-form input[type="submit"] {
+      background: #000 !important;
+      color: #fff !important;
+      border: none !important;
+      padding: 12px 20px !important;
+      font-weight: 600 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+      width: 100% !important;
+      border-radius: 10px !important;
+      margin-top: 16px !important;
+    }
+    .klaviyo-form button:hover,
+    .klaviyo-form input[type="submit"]:hover { background: #333 !important; }
+
+    /* Remove any default gray wrapper Klaviyo injects */
     .kl-private-reset-css-Xuajs1 {
       background: transparent !important;
       box-shadow: none !important;
@@ -65,16 +123,14 @@
 <body>
   <div class="wrap">
     <div class="card">
-      <!-- User's Klaviyo form class -->
+      <!-- Your Klaviyo form -->
       <div class="klaviyo-form-X4haXa"></div>
     </div>
   </div>
 
-  <!-- Klaviyo onsite script with user's company_id -->
+  <!-- Klaviyo onsite script -->
   <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VFGPm2"></script>
 
-  <noscript>
-    Please enable JavaScript to load the signup form.
-  </noscript>
+  <noscript>Please enable JavaScript to load the signup form.</noscript>
 </body>
 </html>
