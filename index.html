@@ -56,34 +56,22 @@
     .klaviyo-form input,
     .klaviyo-form select,
     .klaviyo-form textarea {
-      width: 100% !important;
       box-sizing: border-box !important;
-      padding: 12px 14px !important;
+      padding: 10px 14px !important;
       border: 1px solid var(--border) !important;
-      border-radius: 8px !important;
+      border-radius: 0 !important; /* square corners */
       background: #fff !important;
       color: var(--text) !important;
       outline: none !important;
-      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
       font-size: 16px !important;
+      transition: border-color .15s ease, box-shadow .15s ease;
     }
-    .klaviyo-form input::placeholder,
-    .klaviyo-form textarea::placeholder {
+    .klaviyo-form input::placeholder {
       color: var(--placeholder) !important;
-      opacity: 1 !important;
     }
-    .klaviyo-form input:focus,
-    .klaviyo-form select:focus,
-    .klaviyo-form textarea:focus {
+    .klaviyo-form input:focus {
       border-color: var(--border-focus) !important;
       box-shadow: 0 0 0 2px rgba(0,0,0,.08) !important;
-      background: #fff !important;
-    }
-
-    /* Field spacing */
-    .klaviyo-form .needsclick:not(.kl-private-reset-css-Xuajs1) + .needsclick,
-    .klaviyo-form .kl-private-reset-css-Xuajs1 + .kl-private-reset-css-Xuajs1 {
-      margin-top: 14px !important;
     }
 
     /* Labels */
@@ -101,19 +89,21 @@
       background: #000 !important;
       color: #fff !important;
       border: none !important;
-      padding: 12px 20px !important;
+      padding: 10px 18px !important;
       font-weight: 600 !important;
       font-family: 'DM Sans', sans-serif !important;
       cursor: pointer;
       transition: background .2s ease-in-out;
-      width: 100% !important;
-      border-radius: 10px !important;
-      margin-top: 16px !important;
+      border-radius: 0 !important; /* square edges */
+      display: inline-block !important;
+      width: auto !important; /* shrink to fit text */
     }
     .klaviyo-form button:hover,
-    .klaviyo-form input[type="submit"]:hover { background: #333 !important; }
+    .klaviyo-form input[type="submit"]:hover {
+      background: #333 !important;
+    }
 
-    /* Remove any default gray wrapper Klaviyo injects */
+    /* Remove Klaviyo injected gray wrapper */
     .kl-private-reset-css-Xuajs1 {
       background: transparent !important;
       box-shadow: none !important;
